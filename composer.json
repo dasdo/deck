@@ -1,0 +1,17 @@
+{
+    "name": "dasdo/deck",
+    "description": "Plugins, widgets and more",
+    "homepage": "https://github.com/dasdo/deck",
+    "require": {
+        "php": ">=5.5.0",
+        "symfony/console": "2.6.*"
+    },
+	"autoload": {
+		"classmap": [
+			"src/"
+		],
+		"psr-4": {
+			"Dasdo\\Deck\\": "src/dasdo/deck/"
+		}
+	}
+}
