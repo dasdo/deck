@@ -2,16 +2,25 @@
     "name": "dasdo/deck",
     "description": "Plugins, widgets and more",
     "homepage": "https://github.com/dasdo/deck",
+    "keywords": ["deck"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Sanchez",
+            "email": "dasdo1@gmail.com"
+        }
+    ],
     "require": {
         "php": ">=5.5.0",
-        "symfony/console": "2.6.*"
+        "symfony/console": "~2.3|~3.0",
+        "symfony/process": "~2.3|~3.0"
     },
 	"autoload": {
 		"classmap": [
 			"src/"
 		],
 		"psr-4": {
-			"Dasdo\\Deck\\": "src/dasdo/deck/"
+			"Deck\\Command\\": "src/deck/command/"
 		}
 	}
 }
