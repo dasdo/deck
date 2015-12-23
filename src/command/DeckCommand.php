@@ -105,7 +105,7 @@ class DeckCommand extends Command
     protected function views(InputInterface $input, OutputInterface $output)
     {
          $output->writeln('<info>Crafting views...</info>');
-         $this->move("models");
+         $this->move("views");
     }
 
     protected function controllers(InputInterface $input, OutputInterface $output)
@@ -123,9 +123,14 @@ class DeckCommand extends Command
     protected function move($folder)
     {
         $src = __DIR__."/../packages/{$folder}/".$this->package."/";
-        $dst = $this->directory."/app/{$folder}/";
+        if($folder == "views")
+            $dst = $this->directory."/app/{$folder}/{$this->package}/";
+        else
+            $dst = $this->directory."/app/{$folder}/";
+       
         if(!is_dir($dst))
             mkdir($dst, 0777, true);
+       
         $files = glob("{$src}*.*");
         
         foreach($files as $file)
